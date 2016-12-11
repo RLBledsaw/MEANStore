@@ -1,0 +1,28 @@
+<h2>Products</h2>
+<div id="productsList">
+	<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-5 col-xs-4" ng-repeat='product in products'>
+			<div class="thumbnail">
+				<img ng-src="{{product.url}}" alt="picture">
+				<div class="caption">
+					<h4>Product Name: {{product.name}}</h4>
+					<h5>Quantity Left: {{product.quantity}}</h5>
+					<p>Description: {{product.description}}</p>
+					<p><a href="#/orders" class="btn btn-primary" role="button">Select</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="product_form">
+		<h1>Add a Product</h1>
+			<form ng-submit="createProduct()">
+				Name: <input type="text" ng-model="newProduct.name">
+				Image: <input type="text" ng-model="newProduct.url" placeholder="url...">
+				Description: <textarea rows="2" cols="15" ng-model="newProduct.description"></textarea>
+				Quantity: <input type="number" min="1" max="50" step="1" value="1" ng-model="newProduct.quantity">
+				<input type="submit" value="Add Product">
+			</form>
+	</div>
+</div>
